@@ -26,5 +26,11 @@ function patchFile(
   }
 }
 
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 patchFile(CSS_PATH, CSS_OLD, CSS_NEW, "CSS");
 patchFile(JS_PATH, JS_OLD, JS_NEW, "JS");
+
+await sleep(1000);
